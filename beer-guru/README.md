@@ -1,6 +1,7 @@
 # Project
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.2.
+Please download this project to your computer. Run `npm install`.
 
 ## Development server
 
