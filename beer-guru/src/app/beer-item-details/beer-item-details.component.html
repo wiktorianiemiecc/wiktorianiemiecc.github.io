@@ -1,0 +1,46 @@
+<div class="container d-flex">
+  <div class="row">
+    <div class="d-flex justify-content-center col-sm-12 col-md-3 image-container">
+      <img class="beer-image"
+           [src]="beerItemDetails.image_url === null ? './../../assets/178.png' : beerItemDetails.image_url"
+           [alt]="beerItemDetails.name">
+    </div>
+    <div class="col-sm-12 col-md-9 details">
+      <h3 class="details__header">{{beerItemDetails.name}}</h3>
+      <p class="details__tagline">{{beerItemDetails.tagline}}</p>
+      <hr align="left" height="2px" width="40px" color="#FDC22A">
+      <div class="details__params">
+        <p>IBU: <span>{{beerItemDetails.ibu}}</span></p>
+        <p>ABV: <span>{{beerItemDetails.abv}}</span>%</p>
+        <p>EBC: <span>{{beerItemDetails.ebc}}</span></p>
+      </div>
+      <p class="details__description">{{beerItemDetails.description}}</p>
+      <div class="details__serving-options">
+        <p>Best served with:</p>
+        <ul>
+          <li *ngFor="let servingOption of beerItemDetails.food_pairing">
+            {{servingOption}}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="similarBeers?.length > 0" class="container similar-beers-container">
+  <p>You might also like:</p>
+  <div  class="similar-beer-list d-flex justify-content-center">
+    <div *ngFor="let item of similarBeers" class="item-wrapper col-sm-12 col-md-4">
+      <div class="similar-beer-item">
+        <div class="image-container">
+          <img [src]="item.image_url === null ? './../../assets/178.png' : item.image_url"
+               [alt]="item.name" style="max-height: 150px;">
+        </div>
+        <p>{{item.name}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="similarBeers?.length === 0" class="no-similar-beer">This beer is one of a kind!</div>
+

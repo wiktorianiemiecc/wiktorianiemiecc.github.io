@@ -1,0 +1,17 @@
+<div  class="container">
+  <h1>Beer<span>Guru</span></h1>
+  <div class="row beer-list-row"
+       infiniteScroll
+       [infiniteScrollDistance]="0"
+       [infiniteScrollThrottle]="100"
+       (scrolled)="onScroll()">
+    <div *ngFor="let item of beerList"
+          class="beer-list col-sm-12 col-md-4 d-flex justify-content-center">
+      <app-beer-list-item #dialogWindow
+                          [beerItem]='item'
+                          (viewDetailsEvent)="viewDetails(item.id)"></app-beer-list-item>
+    </div>
+  </div>
+  <app-loader *ngIf="loading"></app-loader>
+</div>
+

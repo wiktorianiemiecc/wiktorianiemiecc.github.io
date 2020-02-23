@@ -1,0 +1,21 @@
+@import '../styles/variables.scss';
+
+.beer-item {
+
+  &__image {
+     max-height: 200px;
+  }
+  &__name {
+    margin-top: 1rem;
+    margin-bottom: 0;
+    font-size: 1.125rem;
+    font-weight: 900;
+    color: $base-yellow-color;
+  }
+
+  &__tagline {
+    font-weight: 100;
+    font-size: 0.75rem;
+    color: $base-dark-grey;
+  }
+}

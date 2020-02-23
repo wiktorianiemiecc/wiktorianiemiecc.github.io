@@ -1,0 +1,50 @@
+@import '../styles/variables.scss';
+
+.container {
+  margin-bottom: 3rem;
+  h1 {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: $base-yellow-color;
+    span {
+      color: $base-dark-grey;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .beer-list {
+      padding: 0;
+    }
+
+    .beer-list-row .beer-list:nth-child(3n+3) {
+      padding-left: 0.5rem;
+    }
+
+    .beer-list-row .beer-list:nth-child(3n+1) {
+      padding-right: 0.5rem;
+    }
+
+    .beer-list-row .beer-list:nth-child(3n+2) {
+      padding-right: 0.5rem;
+      padding-left: 0.5rem;
+    }
+  }
+
+
+  app-beer-list-item {
+    cursor: pointer;
+    background-color: $base-white;
+    padding: 1rem;
+    width: 100%;
+    margin-bottom: 1rem;
+    border-radius: 0.25rem;
+    transition: box-shadow .3s;
+  }
+
+  app-beer-list-item:hover {
+    box-shadow: 0 0 11px $base-shadow;
+    transform: scale(1.05, 1.05);
+  }
+}

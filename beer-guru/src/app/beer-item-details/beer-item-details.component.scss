@@ -1,0 +1,115 @@
+@import '../styles/variables.scss';
+
+.container {
+  color: $base-dark-grey;
+  margin: 1.5rem 0;
+}
+.image-container {
+  .beer-image {
+    max-height: 300px;
+    max-width: 170px;
+    padding: 0 2rem 2rem;
+  }
+}
+
+.details {
+  .details {
+    font-size: 0.8rem;
+
+    &__header {
+      font-weight: 600;
+      margin: 0;
+      font-size: 1.125rem;
+    }
+
+    &__tagline {
+      font-weight: 100;
+    }
+
+    &__params {
+      display: flex;
+      font-weight: 600;
+      p {
+        margin-right: 1rem;
+        span {
+          font-weight: normal;
+        }
+      }
+
+    }
+
+    &__serving-options {
+      p {
+        font-weight: 600;
+      }
+      ul {
+        padding: 0;
+        li {
+          list-style-type: none;
+        }
+
+        li:before {
+          content: "-";
+        }
+      }
+    }
+  }
+}
+
+.similar-beers-container {
+  p {
+    font-weight: 600;
+  }
+
+  .similar-beer-list {
+    padding: 0;
+    min-width: 150px;
+    margin: 0 auto;
+
+    .item-wrapper {
+      padding: 0;
+    }
+
+    @media (max-width: 767px) {
+      flex-direction: column;;
+    }
+      .similar-beer-item {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+
+        margin-bottom: 1rem;
+        border: 1px solid $base-light-grey;
+        padding: 1rem;
+
+        p {
+          margin-top: 1rem;
+          margin-bottom: 0;
+        }
+      }
+  }
+
+  @media (min-width: 768px) {
+    .similar-beer-list .item-wrapper:nth-child(3n+3) {
+      padding-left: 0.5rem;
+    }
+
+    .similar-beer-list .item-wrapper:nth-child(3n+1) {
+      padding-right: 0.5rem;
+    }
+
+    .similar-beer-list .item-wrapper:nth-child(3n+2) {
+      padding-right: 0.5rem;
+      padding-left: 0.5rem;
+    }
+  }
+}
+
+.no-similar-beer {
+  text-align: center;
+  font-size: 1.125rem;
+  font-weight: 900;
+  color: $base-yellow-color;
+}
+
